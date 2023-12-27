@@ -1,18 +1,21 @@
-const generateMessage = (username, text) => {
-    console.log({ created: new Date().getTime()})
+const generateMessage = (userName, text) => {
     return {
-        username,
+        userName,
         text,
-        createdAt: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+        createdAt: getTime()
     }
 }
 
-const generateLocationMessage = (username, URL) => {
+const generateLocationMessage = (userName, URL) => {
     return {
-        username,
+        userName,
         URL,
-        createdAt: new Date().getTime()
+        createdAt: getTime()
     }
+}
+
+const getTime = () => {
+    return new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
 }
 
 module.exports = {
